@@ -1,5 +1,5 @@
 import { useSession } from "next-auth/react";
-
+import React from "react";
 function Home() {
   const { data: session, status } = useSession()
 
@@ -11,7 +11,9 @@ function Home() {
     <main>
       This is the home page
     </main>
+  
   );
+  
 }
 
 export default Home;

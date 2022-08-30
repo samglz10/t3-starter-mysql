@@ -6,6 +6,5 @@ const handler = async (req,res) => {
     res.status(200).json(movieData)
 
 }
-
  
  export default handler;

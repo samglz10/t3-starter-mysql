@@ -3,25 +3,26 @@ import { useQuery } from '@tanstack/react-query'
 
 function SearchBar () {
 
-  /*  const { isLoading, error, data } = useQuery(['movie_id'], ()=> (
+    const { isLoading, error, data } = useQuery(['title'], ()=> (
         fetch('/api/movies/search')
         .then(res => res.json())
     )) 
     if (isLoading) {
         return (
-            <h1> Loading...</h1>
+            <input className=" max-w-lg text-center text-black " type="search" /*onChange ={())} */ placeholder="Search movies here..."/>
         )
     } 
     if (error) {
         return (
-            <h1> Search..</h1>
+            <h1> No Results..</h1>
         );
     }
-*/
+    
+
     return (
 
         <div>
-            <input type="search" /*</div>onChange ={e => data(e.target.value)}*/ placeholder="Search movies here..."/> 
+             
         </div>
     )
  }

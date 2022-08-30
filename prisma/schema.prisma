@@ -83,7 +83,8 @@ model MovieWatchlist {
   id       String @id @default(cuid())
   user     User   @relation(fields: [user_id], references: [id])
   user_id  String
-  movie    Movie[]  
+  movie    Movie[]
+  movie_id  Json   
   
 
   @@index([user_id])

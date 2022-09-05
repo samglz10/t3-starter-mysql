@@ -24,7 +24,7 @@ function NavBar () {
                     </Link>
                  </div>
                     <SearchBar />
-                <div className=" basis 3/4 text-white mx-20">
+                <div className=" basis 3/4 text-white mx-30">
                     <Link href="/movies/watchlist" className=" text-white">
                         My Movie List
                     </Link>

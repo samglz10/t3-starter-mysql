@@ -14,7 +14,7 @@ const MoviesWatchlist = () => {
     } 
     if (error || !data) {
         return (
-            <h1> No movies here...</h1>
+            <h1> No movies here... 😢 </h1>
         );
     } 
 
@@ -33,7 +33,9 @@ const MoviesWatchlist = () => {
                     <h3> {MovieInfo.release_date}</h3>
                     <h3>{MovieInfo.backdrop_path}</h3>
                     <button type="button"> Remove from  Watchlist </button>
+                    <Image src={`https://image.tmdb.org/t/p/w500/${MovieInfo.poster_path}`} sizes="25vw" fill alt={`poster for: ${MovieInfo.title}`} className="rounded-2xl object-center  z-0 "/>
                 </div>
+                
             )))
            }
         </main>

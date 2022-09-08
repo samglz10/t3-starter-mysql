@@ -46,10 +46,16 @@ const FetchMovies = () => {
                             </p>
                         </div>
                             <div className="flex items-end place-content-around text-sm mx-px z-50 inset-x-0 bottom-0 absolute my-2  ">
+                                {/* Make a hanlder function t to a list of arrays to movie list using a POST request*/}
                                 <button  className="btn-gradient" type="button" > Watch Providers  </button>
                                 <button  className="btn-gradient" type="button" > Add to Watchlist  </button>
                             </div>
-                        <Image src={`https://image.tmdb.org/t/p/w500/${MovieInfo.poster_path}`} sizes="25vw" fill alt={`poster for: ${MovieInfo.title}`} className="rounded-2xl object-center hover:z-0 hover:brightness-50  "/>
+                        <Image 
+                            src={`https://image.tmdb.org/t/p/w500/${MovieInfo.poster_path}`} 
+                            sizes="25vw" 
+                            fill 
+                            alt={`poster for: ${MovieInfo.title}`} 
+                            className="rounded-2xl object-center hover:z-0 hover:brightness-50  "/>
                     </div>
                 )))
             }

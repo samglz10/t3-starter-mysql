@@ -6,6 +6,10 @@ p {
     overflow: hidden;
 }
 
+a:hover {
+    cursor: pointer;
+}
+
 @layer components {
     .btn-gradient {
         @apply  rounded-full bg-gradient-to-r text-white from-purple-500 to-pink-500 max-w-xs px-2.5 py-1 z-50 md:filter-none cursor-pointer;

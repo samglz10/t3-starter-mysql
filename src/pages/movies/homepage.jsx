@@ -3,7 +3,7 @@ import Image from "next/future/image"
 
 
 
-const homePage = () => {
+const HomePage = () => {
     
    const { isLoading, error, data } = useQuery(['top_rated'], ()=> (
         fetch('/api/movies/top_rated')
@@ -47,5 +47,5 @@ const homePage = () => {
     }
 
 
-export default homePage;
+export default HomePage;
 

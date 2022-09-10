@@ -13,7 +13,7 @@ const UpcomingMovies = () => {
         )
     } 
     if (error) {
-    //console.log(data)
+    
     }
 
     return (             

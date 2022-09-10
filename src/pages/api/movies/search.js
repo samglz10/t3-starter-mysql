@@ -6,7 +6,7 @@ const handler = async (req,res) => {
     const movieData = await movieResponse.json()
     //running undefined status
     res.status(200).json(movieData)
-    console.log(movieResponse)
+    
 
 }
 

@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import Image from "next/future/image"
-
+import addtomoviewatchlist from '../../utils/addtowatchlist'
 
 
 const FetchMovies = () => {
@@ -48,7 +48,7 @@ const FetchMovies = () => {
                             <div className="flex items-end place-content-around text-sm mx-px z-50 inset-x-0 bottom-0 absolute my-2  ">
                                 {/* Make a hanlder function t to a list of arrays to movie list using a POST request*/}
                                 <button  className="btn-gradient" type="button" > Watch Providers  </button>
-                                <button  className="btn-gradient" type="button" > Add to Watchlist  </button>
+                                <button  className="btn-gradient" type="button" onClick={() => addtomoviewatchlist(MovieInfo.id)}> Add to Watchlist  </button>
                             </div>
                         <Image 
                             src={`https://image.tmdb.org/t/p/w500/${MovieInfo.poster_path}`} 

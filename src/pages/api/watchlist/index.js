@@ -24,27 +24,46 @@ export default async function handler(req,res){
             )
         )
         res.status(200).json(movieWatchlistDisplayData)
-        console.log(movieWatchlistDisplayData)
+    
     }
     else if (req.method ==='PATCH') {
-        const movieWatchlist  = await prisma.movieWatchlist.upsert({
+        const oldMovieWatchlist = await prisma.movieWatchlist.findFirst({
             where: {
                 user_id: session.user.id
             },
-            update: {
-                data:{
-                    movies: {
-                        push: req.body.movie
-                    },
-                },
-            },
-            create: {
-                user_id: session.user.id,
-                movies: [req.body.movie]
+            select: {
+                movie_id: true,
+                id: true,
             }
-        }) 
-        res.status(200).json(movieWatchlist)
-    }
+        })
+        if (oldMovieWatchlist) {
+            const movieWatchlist  = await prisma.movieWatchlist.upsert({
+                where: {
+                    id: oldMovieWatchlist.id
+                },
+                update: {
+                    movie_id: [
+                        ...oldMovieWatchlist.movie_id, req.query.movie_id
+                    ]
+                },
+                create: {
+                    movie_id: [req.query.movie_id],
+                    user_id: session.user.id
+                },
+            }) 
+            res.status(200).json(movieWatchlist)
+        } else {
+            const newMovieWatchlist = await prisma.movieWatchlist.create({
+                data: {
+                    user_id: session.user.id,
+                    movie_id: [
+                        req.query.movie_id
+                    ]
+                },
+            })
+            res.status(200).json(newMovieWatchlist)
+        }
+    } 
     else if (req.method ==='DELETE') {
         const movieWatchlist  = await prisma.movieWatchlist.delete({
             where: {

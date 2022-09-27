@@ -2,20 +2,26 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 
-
 const SearchBar = () => {
    
     const [searchTerm, setSearchTerm ] = useState('');
     const [searchResults, setSearchResults ] = useState( );
+    const clearState = () =>{
+        
+        () =>
+        setSearchTerm('');
+    }; 
 
-    const handleChange = (e) =>{
+
+
+    const handleChange = (e) => {
       
         setSearchTerm(e.target.value)
     }
 
     useEffect(() => {
         const debouncedSearch = setTimeout(() => {
-           if ( searchTerm.length > 4 )   { 
+           if ( searchTerm.length > 3 )   { 
                 fetch(`/api/movies/search?searchTerm=${searchTerm}`)
                 .then((res) => {
                     return res.json()
@@ -32,22 +38,33 @@ const SearchBar = () => {
      
 
    return (
-        <div className='text-black text-center'>
+        <div className='text-black text-center '>
             <form>
-                <input type='text' placeholder='Search Movies Here' value={searchTerm} onChange={handleChange} />
-                <button  type='Submit'/>
+                <input type='text' placeholder='Search Movies Here' value={searchTerm} onChange={handleChange}  />
             </form>
-            <ul className ="absolute bg-white">
+            <ul  className ="absolute bg-white  ">
                 {
                     searchResults && searchResults.results.map((result) => {
                         return (
-                            <Link href={`/movies/${result.id}`} key={result.id} passHref >
-                                <a>
-                                    <li>
-                                        {result.title} {result.release_date}
-                                    </li>
-                                </a>
-                            </Link>
+                            <div className="hover:bg-slate-100"  key={result.id} >
+                                <Link 
+                                href={`/movies/${result.id}`} 
+                                passHref
+                                >
+                                    <a>
+                                        <li onClick={clearState}  className="">
+                                        <div className= "flex flex-col "> 
+                                                <div>
+                                                    {result.title} 
+                                                </div>
+                                                <div>
+                                                    {result.release_date}
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </a>
+                                </Link>
+                            </div>
                         )
                     })
                 }

@@ -1,5 +1,4 @@
- 
- export async function  getServerSideProps({params}){
+export async function  getServerSideProps({params}){
     
     const {id} = params
     
@@ -14,11 +13,12 @@
  
  function MovieInfo({data}) {
 
-    return (
+    return ( 
        <div>
-            <h1> Hello World </h1>
+            <h1> Search Results for.. </h1>
             <pre> {data && JSON.stringify(data, undefined, 2)} </pre>
-       </div>
+           
+       </div> 
     )
  }
 

@@ -4,14 +4,17 @@ import { useState, React } from "react";
 import SearchBar from "./searchbar";
 import 'tailwindcss/tailwind.css'
 import Hamburger from "../assets/hamburger.svg"
-
+import Closed from "../assets/hamburger.svg"
 
 
 function NavBar () {
+    let [open,setOpen] =useState(false);
+    let handleClick = () => setOpen(!open)
+
 
     return (
-    <nav className="  md:flex md:items-center md:justify-between min-w-screen shadow bg-gradient-to-r text-white from-purple-500 to-pink-500 p-5 sticky top-0 m-0 z-50 ">     
-                <ul className="md:flex md:items-center md:justify-between absolute md:static w-full left-0 md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transtition-all ease-in duration-500">        
+    <nav className="  md:flex md:items-center md:justify-between min-w-screen shadow bg-gradient-to-r text-white from-purple-500 to-pink-500 p-5 sticky top-0 m-0 z-10">     
+                <ul className="md:flex md:flex-row md:items-center md:justify-between absolute md:static w-full left-0 md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] z-50 transtition-all ease-in duration-500">        
                 <Link href="/movies/homepage" className="md:flex md:items-center md:justify-between">
                                 Home
                     </Link>   
@@ -38,15 +41,28 @@ function NavBar () {
                             Login
                         </Link>
                     </button>
-                    {/*<>
-                    <Image className="grayscale invert  mx-2 inline z-50 sm:hidden"
-                    src={Hamburger}
-                    alt="menu"
-                    width={50} 
-                    height={50} 
+                    <> 
+                    <div name={!open ? open : close}>
+                        <Image className="grayscale invert  mx-2 inline z-50 sm:hidden"
+                        onClick={handleClick}
+                        src={Hamburger}
+                        name="open"
+                        alt="menu"
+                        width={50} 
+                        height={50} 
                     />
-                 </>
-                */}
+
+                        <Image className="grayscale invert  mx-2 inline z-50 sm:hidden"
+                        onClick={handleClick}
+                        src={Closed}
+                        name="close"
+                        alt="menu"
+                        width={50} 
+                        height={50} 
+                    />
+                    
+                    </div>
+                </>  
         </ul>
     </nav>
 

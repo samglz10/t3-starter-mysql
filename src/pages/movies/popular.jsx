@@ -22,10 +22,8 @@ const FetchMovies = () => {
         // add this to z-50 div for text visibility text-white opacity-0 hover:opacity-100 ease-in-out delay-100 hover:-translate-y-1
         <main className='text-center flex-center max-h-screen max-w-screen '>
         <h1 className='font-bold text-3xl my-2 sticky top-0 '> Popular Movies 🍿 </h1>
-            <div className='grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 rounded-3xl mx-2.5 drop-shadow-xl  '> 
-                {
-                data.results.map((MovieInfo => (
-                    
+            <div className='grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 rounded-3xl mx-2.5 drop-shadow-xl'> 
+                {data.results.map((MovieInfo => (
                     <div 
                         className="font-sans flex flex-col text-center drop-shadow-xl flex-wrap content-around aspect-2/3 relative rounded-lg overflow-hidden transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 hover:z-10 " 
                         key={MovieInfo.id}
@@ -45,8 +43,8 @@ const FetchMovies = () => {
                         </div>
                             <div className="flex items-end place-content-around text-sm mx-px z-50 inset-x-0 bottom-0 absolute my-2  ">
                                 {/* Make a hanlder function t to a list of arrays to movie list using a POST request*/}
-                                <button  className="btn-gradient" type="button" > Watch Providers  </button>
-                                <button  className="btn-gradient" type="button" onClick={() => addtomoviewatchlist(MovieInfo.id)}> Add to Watchlist  </button>
+                                <button  className="rounded-full bg-gradient-to-r text-white from-purple-500 to-pink-500 max-w-xs px-2.5 py-1 z-50 md:filter-none cursor-pointer" type="button" > Watch Providers  </button>
+                                <button  className="rounded-full bg-gradient-to-r text-white from-purple-500 to-pink-500 max-w-xs px-2.5 py-1 z-50 md:filter-none cursor-pointer" type="button" onClick={() => addtomoviewatchlist(MovieInfo.id)}> Add to Watchlist  </button>
                             </div>
                         <Image 
                             src={`https://image.tmdb.org/t/p/w500/${MovieInfo.poster_path}`} 

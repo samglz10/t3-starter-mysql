@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import Image from "next/future/image"
 
 
+
 const UpcomingMovies = () => {
     const { isLoading, error, data } =useQuery(['upcoming'], () => (
         fetch('/api/movies/upcoming')
@@ -28,7 +29,7 @@ const UpcomingMovies = () => {
                         <div className=" flex flex-col justify-around w-fit relative text-white z-40 hover:backdrop-blur-sm hover:grayscale h-full opacity-0 hover:opacity-100 ease-in-out delay-100 hover:-translate-y-1 "> 
                             <h2 className=" font-extrabold text-base absolute inset-x-0 top-0 my-5 bg "> {MovieInfo.title}</h2>
                             <p className=" text-white text-sm h-fit overflow-y-auto overflow-hidden text-center mx-5 mt-32 drop-shadow-2xl bg-stone-900/80 rounded-lg px-2 py-2 "> {MovieInfo.overview}</p>
-                            <p className="my-12 "> Release Date: {MovieInfo.release_date}</p>
+                            <p className="my-12 font-bold bg-stone-900/80"> Release Date: {MovieInfo.release_date}</p>
                         </div>
                             <div className="flex items-end place-content-around text-sm mx-px z-50 inset-x-0 bottom-0 absolute my-2  ">
                                 <button  className=" rounded-full bg-gradient-to-r text-white from-purple-500 to-pink-500 max-w-xs px-2.5 py-1 z-50 md:filter-none cursor-pointer" type="button" onClick=''> Watch Providers  </button>

@@ -21,7 +21,7 @@ const UpcomingMovies = () => {
         // add this to z-50 div for text visibility text-white opacity-0 hover:opacity-100 ease-in-out delay-100 hover:-translate-y-1
         <main className='text-center flex-center '>
         <h1 className='font-bold text-3xl my-2 sticky top-0 '> Upcoming Movies 🍿 </h1>
-            <div className='grid grid-cols-5 gap-4 rounded-3xl mx-2.5 drop-shadow-xl  '>
+            <div className='sm:grid-cols-2 grid grid-cols-5 gap-4 rounded-3xl mx-2.5 drop-shadow-xl  '>
                 {
                 data.results.map((MovieInfo => (
                     

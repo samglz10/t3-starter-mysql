@@ -12,8 +12,6 @@ const SearchBar = () => {
         setSearchTerm('');
     }; 
 
-
-
     const handleChange = (e) => {
       
         setSearchTerm(e.target.value)
@@ -30,7 +28,7 @@ const SearchBar = () => {
                     setSearchResults(data)
                 })
             }
-        },150)
+        },100)
         return () => {
             clearTimeout(debouncedSearch)
         }
@@ -38,11 +36,11 @@ const SearchBar = () => {
      
 
    return (
-        <div className='text-black text-center '>
-            <form>
-                <input type='text' placeholder='Search Movies Here' value={searchTerm} onChange={handleChange}  />
+        <div className='flex flex-row text-black text-center '>
+            <form className="min-w-min">
+                <input className="flex flex-grow" type='text' placeholder='Search Movies Here' value={searchTerm} onChange={handleChange}  />
             </form>
-            <ul  className ="absolute bg-white  ">
+            <ul  className ="absolute bg-white ">
                 {
                     searchResults && searchResults.results.map((result) => {
                         return (
@@ -53,7 +51,7 @@ const SearchBar = () => {
                                 >
                                     <a>
                                         <li onClick={clearState}  className="">
-                                        <div className= "flex flex-col "> 
+                                        <div className= "flex flex-col  "> 
                                                 <div>
                                                     {result.title} 
                                                 </div>

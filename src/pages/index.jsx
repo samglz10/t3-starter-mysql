@@ -16,7 +16,7 @@ function Home() {
 
   return (
     <main>
-      This is the home page
+     <HomePage/>
     </main>
   );
 }

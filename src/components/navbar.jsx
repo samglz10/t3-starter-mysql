@@ -10,10 +10,9 @@ import Hamburger from "../assets/hamburger.svg"
 function NavBar () {
 
     return (
-    <nav className=" md:flex md:items-center md:justify-between min-w-screen shadow bg-gradient-to-r text-white from-purple-500 to-pink-500 p-5 sticky top-0 m-0 z-50 ">
-                         
-                <ul className=" flex justify-between md:flex md:items-center md:justify-beetwen absolute z-[-1] md:z-auto md:static w-full left-0 md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transtition-all ease-in duration-500">        
-                <Link href="/" className="md:flex md:items-center md:justify-between">
+    <nav className="  md:flex md:items-center md:justify-between min-w-screen shadow bg-gradient-to-r text-white from-purple-500 to-pink-500 p-5 sticky top-0 m-0 z-50 ">     
+                <ul className="md:flex md:items-center md:justify-between absolute md:static w-full left-0 md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transtition-all ease-in duration-500">        
+                <Link href="/movies/homepage" className="md:flex md:items-center md:justify-between">
                                 Home
                     </Link>   
                     <li className="mx-4 my-6 md:my-0">

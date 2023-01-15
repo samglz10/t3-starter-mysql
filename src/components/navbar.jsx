@@ -4,20 +4,21 @@ import { useState, React } from "react";
 import SearchBar from "./searchbar";
 import 'tailwindcss/tailwind.css'
 import Hamburger from "../assets/hamburger.svg"
-import Closed from "../assets/hamburger.svg"
+import Closed from "../assets/close.svg"
 
 
 function NavBar () {
-    let [open,setOpen] =useState(false);
-    let handleClick = () => setOpen(!open)
-
-
+  {/** 
+    const[nav, setNav] = useState(false)
+    //setNav will set nav to it's opposite value
+    const handleClick = () => setNav(!nav)
+*/}
     return (
-    <nav className="  md:flex md:items-center md:justify-between min-w-screen shadow bg-gradient-to-r text-white from-purple-500 to-pink-500 p-5 sticky top-0 m-0 z-10">     
-                <ul className="md:flex md:flex-row md:items-center md:justify-between absolute md:static w-full left-0 md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] z-50 transtition-all ease-in duration-500">        
+    <nav className="sm:flex-col sm:flex-wrap sm:z-10 md:flex md:items-center md:justify-between min-w-screen shadow bg-gradient-to-r text-white from-purple-500 to-pink-500 p-5 sticky top-0 m-0 z-10">     
+                <ul className=" text-white md:flex md:flex-row md:items-center md:justify-between  max-w-full left-0 md:py-0 py-4 md:pl-0 pl-7 ">        
                 <Link href="/movies/homepage" className="md:flex md:items-center md:justify-between">
-                                Home
-                    </Link>   
+                        Home
+                </Link>   
                     <li className="mx-4 my-6 md:my-0">
                         <Link href="/movies/upcoming">
                             Upcoming
@@ -41,28 +42,29 @@ function NavBar () {
                             Login
                         </Link>
                     </button>
-                    <> 
-                    <div name={!open ? open : close}>
-                        <Image className="grayscale invert  mx-2 inline z-50 sm:hidden"
-                        onClick={handleClick}
+                    {/*<> 
+                    <div onClick={handleClick} className="md:hidden z-10">
+                    {!nav ?  :  }
+                    </div>
+                        <Image className="grayscale invert  mx-2 inline z-50 "
                         src={Hamburger}
-                        name="open"
+                        onClick={handleClick}
+                        name="menu"
                         alt="menu"
                         width={50} 
                         height={50} 
                     />
-
-                        <Image className="grayscale invert  mx-2 inline z-50 sm:hidden"
+                        <Image className="grayscale invert  mx-2 inline z-50 "
                         onClick={handleClick}
                         src={Closed}
-                        name="close"
-                        alt="menu"
+                        name="closed"
+                        alt="close"
                         width={50} 
                         height={50} 
                     />
-                    
-                    </div>
-                </>  
+                
+                   
+    </>  */}
         </ul>
     </nav>
 

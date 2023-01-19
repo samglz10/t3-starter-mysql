@@ -38,7 +38,7 @@ const SearchBar = () => {
    return (
         <div className='flex flex-row text-black text-center '>
             <form className="min-w-min">
-                <input className="flex flex-grow" type='text' placeholder='Search Movies Here' value={searchTerm} onChange={handleChange}  />
+                <input className="flex flex-grow text-center" type='text' placeholder='Search Movies Here' value={searchTerm} onChange={handleChange}  />
             </form>
             <ul  className ="absolute bg-white ">
                 {
@@ -51,7 +51,7 @@ const SearchBar = () => {
                                 >
                                     <a>
                                         <li onClick={clearState}  className="">
-                                        <div className= "flex flex-col  "> 
+                                        <div className= "flex flex-col text-center "> 
                                                 <div>
                                                     {result.title} 
                                                 </div>

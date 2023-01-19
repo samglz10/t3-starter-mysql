@@ -17,7 +17,7 @@ export async function  getServerSideProps({params}){
        <div>
             <h1> Search Results for.. </h1>
             <pre> {data && JSON.stringify(data, undefined, 2)} </pre>
-           
+            
        </div> 
     )
  }

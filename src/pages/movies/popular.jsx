@@ -20,12 +20,12 @@ const FetchMovies = () => {
     return (             
         //usequery to make onclick button to add to moviewatchlist. useQuery-tanstack doing a fetch to do a Patch request using body.{title or id}
         // add this to z-50 div for text visibility text-white opacity-0 hover:opacity-100 ease-in-out delay-100 hover:-translate-y-1
-        <main className='text-center flex-center max-h-screen max-w-screen '>
+        <main className='text-center flex-center  sm:mb-10 sm:mx-2 '>
         <h1 className='font-bold text-3xl my-2 sticky top-0 '> Popular Movies 🍿 </h1>
             <div className='grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 rounded-3xl mx-2.5 drop-shadow-xl'> 
                 {data.results.map((MovieInfo => (
                     <div 
-                        className="font-sans flex flex-col text-center drop-shadow-xl flex-wrap content-around aspect-2/3 relative rounded-lg overflow-hidden transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 hover:z-10 " 
+                        className="font-sans flex flex-col text-center drop-shadow-xl flex-wrap content-around aspect-2/3 relative rounded-lg overflow-hidden transition ease-in-out delay-100 hover:-translate-y-1 md:hover:scale-110 hover:z-10 " 
                         key={MovieInfo.id}
                     >
                         <div 

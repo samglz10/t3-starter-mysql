@@ -18,7 +18,7 @@ const UpcomingMovies = () => {
 
     return (             
         //usequery to make onclick button to add to moviewatchlist. useQuery-tanstack doing a fetch to do a Patch request using body.{title or id}
-        <main className='text-center flex-center '>
+        <main className='text-center flex-center sm:mb-10 sm:mx-2'>
         <h1 className='font-bold text-3xl my-2.5 sticky top-0 z-20 '> Search Movies🍿 </h1>
             <div className='grid grid-cols-5 gap-4 rounded-3xl mx-2.5 drop-shadow-xl '>
             {
